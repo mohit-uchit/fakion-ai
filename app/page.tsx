@@ -515,7 +515,16 @@ export default function Home() {
                 Track detections, view historical data, and analyze trends
               </p>
             </div>
-            <div className="aspect-video bg-gradient-to-br from-indigo-500/5 to-cyan-500/5 rounded-xl border border-white/5 flex items-center justify-center">
+            <div className="relative aspect-video bg-gradient-to-br from-indigo-500/5 to-cyan-500/5 rounded-xl border border-white/5 overflow-hidden">
+              <Image
+                src="/dashboard-preview.png"
+                alt="Advanced Analytics Dashboard Preview"
+                fill
+                className="object-contain p-4"
+                priority
+              />
+            </div>
+            <div className="flex justify-center mt-6">
               <Link href="/insights">
                 <Button variant="primary" className="px-8 py-4">
                   View Dashboard Preview
