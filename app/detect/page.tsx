@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import UploadPanel from '@/components/UploadPanel';
 import FaceScanner from '@/components/animations/FaceScanner';
@@ -36,7 +36,7 @@ export default function DetectPage() {
     setResult(null);
   };
 
-  const tabs: { id: DetectionTab; label: string; icon: JSX.Element }[] = [
+  const tabs: { id: DetectionTab; label: string; icon: ReactNode }[] = [
     {
       id: 'image',
       label: 'Image Detection',
@@ -99,8 +99,8 @@ export default function DetectPage() {
                 resetDetection();
               }}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all ${activeTab === tab.id
-                  ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white'
-                  : 'glass text-gray-300 hover:glass-strong'
+                ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white'
+                : 'glass text-gray-300 hover:glass-strong'
                 }`}
             >
               {tab.icon}
