@@ -1,9 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const navLinks = [
   { name: 'Detect', href: '/detect' },
@@ -15,15 +15,26 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
+  useEffect(() => {
+    return scrollY.on('change', (latest) => {
+      setScrolled(latest > 20);
+    });
+  }, [scrollY]);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 glass-strong"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          ? 'bg-[#0B0B0F]/98 backdrop-blur-md border-b border-white/10 shadow-lg'
+          : 'bg-[#0B0B0F]/95 backdrop-blur-sm'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <motion.div
@@ -33,40 +44,48 @@ export default function Navbar() {
               <Image
                 src="/logo.webp"
                 alt="Fakion AI"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="object-contain"
               />
             </motion.div>
-            <span className="text-2xl font-bold gradient-text font-['Sora']">
+            <span className="text-xl font-bold text-white heading-font">
               Fakion AI
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link, index) => (
               <motion.div
                 key={link.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
               >
                 <Link
                   href={link.href}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 relative group"
+                  className="px-4 py-2 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-all duration-200"
                 >
                   {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             ))}
+
+            {/* CTA Button */}
+            <Link
+              href="/detect"
+              className="ml-4 px-5 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white text-sm font-semibold shadow-sm hover:shadow-md transition-all duration-200"
+            >
+              Get Started
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors"
+            aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
@@ -84,18 +103,27 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden pb-4"
+            className="md:hidden pb-4 border-t border-white/10"
           >
-            {navLinks.map((link) => (
+            <div className="pt-4 space-y-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="block px-4 py-2 text-sm text-zinc-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
               <Link
-                key={link.name}
-                href={link.href}
-                className="block py-2 text-gray-300 hover:text-white transition-colors"
+                href="/detect"
+                className="block mx-4 mt-4 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-500 text-white text-sm font-semibold text-center"
                 onClick={() => setIsOpen(false)}
               >
-                {link.name}
+                Get Started
               </Link>
-            ))}
+            </div>
           </motion.div>
         )}
       </div>
