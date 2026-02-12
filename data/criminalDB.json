@@ -1,0 +1,42 @@
+[
+  {
+    "hash": "fc8a4d2b9e1f3c7a",
+    "name": "Unknown Suspect #447",
+    "crime": "Identity Fraud",
+    "confidence": 88,
+    "lastSeen": "Delhi, India",
+    "caseId": "CF-2026-00447"
+  },
+  {
+    "hash": "a3f7e9d1c4b8f2e6",
+    "name": "Rajesh Kumar",
+    "crime": "Cyber Extortion",
+    "confidence": 92,
+    "lastSeen": "Mumbai, India",
+    "caseId": "CF-2025-01223"
+  },
+  {
+    "hash": "b9c3e7f1a5d2c8e4",
+    "name": "Unknown Suspect #712",
+    "crime": "Financial Fraud",
+    "confidence": 76,
+    "lastSeen": "Bangalore, India",
+    "caseId": "CF-2026-00712"
+  },
+  {
+    "hash": "d7e2f8a3c5b1e9f4",
+    "name": "Priya Sharma",
+    "crime": "Deepfake Distribution",
+    "confidence": 85,
+    "lastSeen": "Hyderabad, India",
+    "caseId": "CF-2025-02134"
+  },
+  {
+    "hash": "e4c9f7b2a8d3e1f5",
+    "name": "Unknown Suspect #923",
+    "crime": "Online Harassment",
+    "confidence": 81,
+    "lastSeen": "Chennai, India",
+    "caseId": "CF-2026-00923"
+  }
+]

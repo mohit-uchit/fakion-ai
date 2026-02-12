@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "fileType": "image",
+    "fileName": "suspect_photo.jpg",
+    "result": "deepfake",
+    "confidence": 92,
+    "timestamp": "2026-02-12T10:30:00Z",
+    "status": "completed"
+  },
+  {
+    "id": "2",
+    "fileType": "video",
+    "fileName": "interview_footage.mp4",
+    "result": "authentic",
+    "confidence": 87,
+    "timestamp": "2026-02-12T09:15:00Z",
+    "status": "completed"
+  },
+  {
+    "id": "3",
+    "fileType": "audio",
+    "fileName": "voice_recording.mp3",
+    "result": "deepfake",
+    "confidence": 78,
+    "timestamp": "2026-02-11T16:45:00Z",
+    "status": "completed"
+  },
+  {
+    "id": "4",
+    "fileType": "image",
+    "fileName": "identity_card.png",
+    "result": "authentic",
+    "confidence": 95,
+    "timestamp": "2026-02-11T14:20:00Z",
+    "status": "completed"
+  },
+  {
+    "id": "5",
+    "fileType": "video",
+    "fileName": "security_cam.mp4",
+    "result": "deepfake",
+    "confidence": 85,
+    "timestamp": "2026-02-10T11:30:00Z",
+    "status": "completed"
+  }
+]

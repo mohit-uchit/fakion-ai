@@ -1,0 +1,85 @@
+{
+  "totalScans": 1540,
+  "fakeDetected": 420,
+  "criminalMatches": 12,
+  "weeklyDetections": [
+    {
+      "day": "Mon",
+      "scans": 245,
+      "fake": 68,
+      "real": 177
+    },
+    {
+      "day": "Tue",
+      "scans": 198,
+      "fake": 52,
+      "real": 146
+    },
+    {
+      "day": "Wed",
+      "scans": 267,
+      "fake": 73,
+      "real": 194
+    },
+    {
+      "day": "Thu",
+      "scans": 223,
+      "fake": 61,
+      "real": 162
+    },
+    {
+      "day": "Fri",
+      "scans": 289,
+      "fake": 82,
+      "real": 207
+    },
+    {
+      "day": "Sat",
+      "scans": 178,
+      "fake": 45,
+      "real": 133
+    },
+    {
+      "day": "Sun",
+      "scans": 140,
+      "fake": 39,
+      "real": 101
+    }
+  ],
+  "mediaDistribution": [
+    {
+      "name": "Image",
+      "value": 820
+    },
+    {
+      "name": "Video",
+      "value": 540
+    },
+    {
+      "name": "Audio",
+      "value": 180
+    }
+  ],
+  "timeline": [
+    {
+      "date": "Week 1",
+      "fake": 95,
+      "real": 312
+    },
+    {
+      "date": "Week 2",
+      "fake": 112,
+      "real": 289
+    },
+    {
+      "date": "Week 3",
+      "fake": 88,
+      "real": 334
+    },
+    {
+      "date": "Week 4",
+      "fake": 125,
+      "real": 285
+    }
+  ]
+}
